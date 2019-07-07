@@ -1,0 +1,76 @@
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$primary: mat-palette($mat-gray,200);
+// $accent: mat-palette($mat-green,500);
+
+// $theme: mat-light-theme($primary);
+
+// @include angular-material-theme($theme);
+
+* {
+    font-family: 'Comfortaa', cursive;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @media screen and (max-width: 640px) {
+        flex-direction: column;
+    }   
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    background-color: #eee;
+    margin: 15px 5px;
+    border: .25px solid darkgray; 
+    padding: 15px;
+    overflow: auto;
+    height: 73vh;
+}
+
+.mat-expansion-panel .mat-expanded {
+    background: green !important;
+}
+
+.mat-card {
+    margin: 5px 0;
+}
+
+agm-map {
+    height: 500px;
+}
+
+
+.full-width {
+    width: 100%;
+}
+
+.mat-divider {
+    margin: 12px 0 !important;
+}
+
+.list-item {
+    background: #fff !important;
+}
+
+.list-item:hover {
+    background: lightcoral !important;
+    cursor: pointer;
+}
+
+.list-item-selected {
+    background: lightcoral !important;
+}
+
+pre {
+    font-size: 12px;
+    text-decoration: underline;
+}
