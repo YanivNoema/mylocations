@@ -74,3 +74,11 @@ pre {
     font-size: 12px;
     text-decoration: underline;
 }
+
+.error-msg {
+    font-size: 75%;
+    bottom: -2em;
+    color: red;
+    position: absolute;
+    left: 0;
+}
