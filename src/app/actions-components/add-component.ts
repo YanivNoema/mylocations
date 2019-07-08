@@ -1,5 +1,5 @@
 import { ObserverManagerService } from './../observer.manager.service';
-import { DEAFULT_STATE_VALUE } from './../constants';
+import { DEAFULT_STATE_VALUE, STATE_LOCATIONS, STATE_CATEGORIES } from './../constants';
 import { Categories } from '../usefull';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
@@ -172,7 +172,7 @@ export class AddComponent implements OnInit {
   }
 
   startEditMode(index) {
-    if (this.state == 'locations') {
+    if (this.state == STATE_LOCATIONS) {
       var item = this.data.locations[index];
       const values = item.coordinates.split(' ');
       this.locationsForm.setValue({
@@ -196,7 +196,7 @@ export class AddComponent implements OnInit {
     this.data.locations = this.data.locations ? this.data.locations : [];
     this.data.categories = this.data.categories ? this.data.categories : [];
 
-    if (type == 'locations') {
+    if (type == STATE_LOCATIONS) {
       if (this.data.caller == 'edit-component') {
         this.data.locations[this.data.editIndex] =
           {
@@ -218,9 +218,11 @@ export class AddComponent implements OnInit {
       }
       this.locationsForm.reset();
     }
-    else if (type == 'categories') {
+    else if (type == STATE_CATEGORIES) {
       if (this.data.caller == 'edit-component') {
         for (var i = 0; i < this.data.locations.length; i++) {
+          
+          // We update locations category
           if (this.data.locations[i].category == this.data.categories[this.data.editIndex]) {
             this.data.locations[i].category = this.categoriesForm.value.name;
           }

@@ -4,6 +4,7 @@ import { BottomBarComponent } from './../components/bottombar.component';
 import { ActionsManagerComponent } from './actions.manager.component';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from "rxjs";
+import { STATE_LOCATIONS, STATE_CATEGORIES } from '../constants';
 
 export interface Categories {
   value: string;
@@ -51,7 +52,7 @@ export class RemoveComponent {
     this.categories = data.categories;
     data.locations = data.locations || [];
     this.locations = data.locations.map(item => item.name);
-    this.items = this.state == 'locations' ? this.locations : this.categories;
+    this.items = this.state == STATE_LOCATIONS ? this.locations : this.categories;
   }
 
   chooseItem(item) {
@@ -63,14 +64,13 @@ export class RemoveComponent {
   }
 
   delete() {
-    debugger;
-    if (this.state == 'locations') {
+    if (this.state == STATE_LOCATIONS) {
       const index = this.data.locations.findIndex(v => v, name == this.selectedItem)
       if (index > -1) {
         this.data.locations.splice(index, 1);
       }
     }
-    else if (this.state == 'categories') {
+    else if (this.state == STATE_CATEGORIES) {
       const index = this.data.categories.indexOf(this.selectedItem);
       if (index > -1) {
         this.data.categories.splice(index, 1);

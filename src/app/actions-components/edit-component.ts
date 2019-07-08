@@ -1,5 +1,6 @@
+import { STATE_LOCATIONS, STATE_CATEGORIES } from './../constants';
 import { ObserverManagerService } from './../observer.manager.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'edit-component',
@@ -46,7 +47,7 @@ export class EditComponent {
       this.state = data.state;
       this.categories = data.categories;
       this.locations = data.locations.map(item => item.name);
-      this.items = this.state == 'locations' ? this.locations : this.categories;
+      this.items = this.state == STATE_LOCATIONS ? this.locations : this.categories;
   }
 
   chooseItem(item) {
@@ -59,10 +60,10 @@ export class EditComponent {
 
   edit() {
     var index;
-    if (this.state == 'locations') {
+    if (this.state == STATE_LOCATIONS) {
       index  = this.data.locations.findIndex(v=> v,name == this.selectedItem)
     }
-    else if (this.state == 'categories') {
+    else if (this.state == STATE_CATEGORIES) {
       index = this.data.categories.indexOf(this.selectedItem);
     }
 
