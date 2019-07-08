@@ -1,8 +1,6 @@
 import { ObserverManagerService } from './../observer.manager.service';
 import { DEAFULT_STATE_VALUE, ACTIONS_MAP } from './../constants';
 import { Component } from '@angular/core';
-import { ActionsManagerComponent } from './actions.manager.component';
-import { BottomBarComponent } from '../components/bottombar.component';
 import { Subject } from "rxjs";
 
 export interface Categories {

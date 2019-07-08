@@ -1,9 +1,5 @@
 import { ObserverManagerService } from './../observer.manager.service';
-import { DataManagerService } from './../data.manager.service';
-import { BottomBarComponent } from './../components/bottombar.component';
-import { ActionsManagerComponent } from './actions.manager.component';
-import { Component, OnInit } from '@angular/core';
-import { Subject } from "rxjs";
+import { Component } from '@angular/core';
 import { STATE_LOCATIONS, STATE_CATEGORIES } from '../constants';
 
 export interface Categories {

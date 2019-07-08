@@ -1,6 +1,5 @@
 import { ObserverManagerService } from './../observer.manager.service';
 import { Component } from '@angular/core';
-import { Subject } from "rxjs";
 
 @Component({
   selector: 'bottom-bar-component',

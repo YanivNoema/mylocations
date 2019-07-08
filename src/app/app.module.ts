@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { Subject } from "rxjs";
 import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,20 +20,17 @@ import {
   MatSelectModule,
   MatGridListModule
 } from '@angular/material';
-import { LocationComponent } from './location-component/location.component';
 import { ActionsManagerComponent } from './actions-components/actions.manager.component';
-import { TopBarComponent } from './components/topbar.component';
-import { BottomBarComponent } from './components/bottombar.component';
-import { MapComponent } from './components/map.component';
+import { TopBarComponent } from './view-components/topbar.component';
+import { BottomBarComponent } from './view-components/bottombar.component';
+import { MapComponent } from './view-components/map.component';
 import { EditComponent } from './actions-components/edit-component';
 import { ViewComponent } from './actions-components/view-component';
 import { AddComponent } from './actions-components/add-component';
 import { DataManagerService } from './data.manager.service';
 import { RemoveComponent } from './actions-components/remove-component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AngularFireModule } from '@angular/fire';
-
 
 export const environment = {
   firebase: {
@@ -46,7 +42,6 @@ export const environment = {
 @NgModule({
   declarations: [
     AppComponent,
-    LocationComponent,
     ActionsManagerComponent,
     ViewComponent,
     AddComponent,
